@@ -1,0 +1,8 @@
+- name: Insyall PHP To Client
+  remote_user: "{{user}}"
+  hosts: "{{host}}"
+  sudo: yes
+  roles:
+    - common
+    - php_install
+      

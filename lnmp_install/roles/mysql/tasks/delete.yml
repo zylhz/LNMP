@@ -1,0 +1,6 @@
+- name: absent mysql-libs In Client
+  yum: name=mysql-libs state=absent
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: Install  Crontabs In Client
+  yum: name=crontabs enablerepo=remi state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6

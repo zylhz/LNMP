@@ -1,0 +1,3 @@
+- include: copy.yml
+- name: Install initializtion require software
+  yum: name=pcre-devel state=present

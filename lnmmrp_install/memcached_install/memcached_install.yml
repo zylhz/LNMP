@@ -1,0 +1,8 @@
+- name: Install Memcached To Client
+  remote_user: "{{user}}"
+  hosts: "{{host}}"
+  sudo: yes
+  roles:
+    - common
+    - memcached_install
+      

@@ -1,0 +1,77 @@
+- name: Add User Deploy To Client
+  user: name=deploy shell=/bin/bash
+- name: install gd-last To Client
+  yum: name=gd-last enablerepo=remi state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php To Client
+  yum: name=php state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-fpm To Client
+  yum: name=php-fpm state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-common To Client
+  yum: name=php-common state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-cli To Client
+  yum: name=php-cli state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-mysql To Client
+  yum: name=php-mysql state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-pdo To Client
+  yum: name=php-pdo state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-mcrypt To Client
+  yum: name=php-mcrypt state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install libmemcached-last To Client
+  yum: name=libmemcached-last enablerepo=remi state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-memcached To Client
+  yum: name=php-pecl-memcached state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-redis To Client
+  yum: name=php-pecl-redis state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-bcmach To Client
+  yum: name=php-bcmath state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-xml To Client
+  yum: name=php-xml state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-xmlrpc To Client
+  yum: name=php-xmlrpc state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-dba To Client
+  yum: name=php-dba state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-gd To Client
+  yum: name=php-gd state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install ImageMagick-last-libs To Client
+  yum: name=ImageMagick-last-libs enablerepo=remi state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-pecl-imagick To Client
+  yum: name=php-pecl-imagick state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-mbstring To Client
+  yum: name=php-mbstring state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-enchant To Client
+  yum: name=php-enchant state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-enchant To Client
+  yum: name=php-yaf state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-pecl-memcache To Client
+  yum: name=php-pecl-memcache state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-pecl-xhprof To Client
+  yum: name=php-pecl-xhprof state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: install php-devel To Client
+  yum: name=php-devel state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6
+- name: Install php-opcache To Client
+  yum: name=php-opcache state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6

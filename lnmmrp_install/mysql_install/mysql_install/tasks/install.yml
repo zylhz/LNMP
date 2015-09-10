@@ -1,0 +1,12 @@
+- name: Create MysqlDB Dir
+  file: dest=/data/mysqldata/ state=directory
+- name: Add Mysql User
+  user: name=mysql shell=/bin/bash
+- name: Modify Mysql Dir Permission In Client
+  file: path=/data/mysqldata/ owner=mysql group=mysql mode=0755
+- name: Install mysql In Client
+  yum: name=mysql enablerepo=remi state=present
+- name: Install  mysql-server In Client
+  yum: name=mysql-server enablerepo=remi state=present
+- name: Add Boot Start Mysql Service In Client
+  shell: chkconfig --level 345 mysqld on

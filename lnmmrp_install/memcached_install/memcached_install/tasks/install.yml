@@ -1,0 +1,6 @@
+- name: Install memcached In Client
+  yum: name=memcached enablerepo=remi state=present
+- name: Install memcached-devel In Client
+  yum: name=memcached-devel enablerepo=remi state=present
+- name: Start memcached In Clent
+  service: name=memcached enabled=yes state=started

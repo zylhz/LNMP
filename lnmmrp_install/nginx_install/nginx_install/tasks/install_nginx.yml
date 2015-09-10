@@ -1,0 +1,4 @@
+- name: Add User Deploy To Client
+  user: name=deploy shell=/bin/bash
+- name: install nginx
+  yum: name=nginx.x86_64 state=present

@@ -1,0 +1,52 @@
+- name: Add User Deploy To Client
+  user: name=deploy shell=/bin/bash
+- name: install gd-last To Client
+  yum: name=gd-last enablerepo=remi state=present
+- name: install php To Client
+  yum: name=php state=present
+- name: install php-fpm To Client
+  yum: name=php-fpm state=present
+- name: install php-common To Client
+  yum: name=php-common state=present
+- name: install php-cli To Client
+  yum: name=php-cli state=present
+- name: install php-mysql To Client
+  yum: name=php-mysql state=present
+- name: install php-pdo To Client
+  yum: name=php-pdo state=present
+- name: install php-mcrypt To Client
+  yum: name=php-mcrypt state=present
+- name: install libmemcached-last To Client
+  yum: name=libmemcached-last enablerepo=remi state=present
+- name: install php-memcached To Client
+  yum: name=php-pecl-memcached state=present
+- name: install php-redis To Client
+  yum: name=php-pecl-redis state=present
+- name: install php-bcmach To Client
+  yum: name=php-bcmath state=present
+- name: install php-xml To Client
+  yum: name=php-xml state=present
+- name: install php-xmlrpc To Client
+  yum: name=php-xmlrpc state=present
+- name: install php-dba To Client
+  yum: name=php-dba state=present
+- name: install php-gd To Client
+  yum: name=php-gd state=present
+- name: install ImageMagick-last-libs To Client
+  yum: name=ImageMagick-last-libs enablerepo=remi state=present
+- name: install php-pecl-imagick To Client
+  yum: name=php-pecl-imagick state=present
+- name: install php-mbstring To Client
+  yum: name=php-mbstring state=present
+- name: install php-enchant To Client
+  yum: name=php-enchant state=present
+- name: install php-enchant To Client
+  yum: name=php-yaf state=present
+- name: install php-pecl-memcache To Client
+  yum: name=php-pecl-memcache state=present
+- name: install php-pecl-xhprof To Client
+  yum: name=php-pecl-xhprof state=present
+- name: install php-devel To Client
+  yum: name=php-devel state=present
+- name: Install php-opcache To Client
+  yum: name=php-opcache state=present

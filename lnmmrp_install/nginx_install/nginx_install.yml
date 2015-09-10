@@ -1,0 +1,8 @@
+- name: Insyall Nginx To Client
+  remote_user: "{{user}}"
+  hosts: "{{host}}"
+  sudo: yes
+  roles:
+    - common
+    - nginx_install
+      

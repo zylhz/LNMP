@@ -1,0 +1,8 @@
+- name: Insyall Redis To Client
+  remote_user: "{{user}}"
+  hosts: "{{host}}"
+  sudo: yes
+  roles:
+    - common
+    - redis_install
+      

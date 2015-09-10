@@ -1,0 +1,4 @@
+- name: Copy remi.repo To Client
+  copy: src=remi.repo dest=/etc/yum.repo.d/
+- name: Copy epel.repo To Client
+  copy: src=epel.repo dest=/etc/yum.repo.d/

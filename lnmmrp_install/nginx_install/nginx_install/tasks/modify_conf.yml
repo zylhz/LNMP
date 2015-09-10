@@ -1,0 +1,7 @@
+- name: CPU
+  shell: grep "processor" /proc/cpuinfo| wc -l
+  register: CPU
+- name: Setting Process Of Nginx
+  shell: sed -i '/^worker_processes/cworker_processes {{ CPU.stdout }};' /etc/nginx/nginx.conf
+- name: Set Page Blank Of Nginx 200
+  command: sed -i '/^fastcgi_param  REDIRECT_STATUS/a\fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;' /etc/nginx/fastcgi_params

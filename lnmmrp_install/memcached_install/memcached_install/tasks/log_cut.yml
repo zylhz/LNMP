@@ -1,0 +1,10 @@
+- name: Create Memcached Log Dir
+  file: dest=/var/log/memcached state=directory
+- name: Modify Memcached Dir Permission In Client
+  file: path=/var/log/memcached owner=memcached group=root mode=0755
+- name: Copy Memcached Log Cutting Plan To Client
+  template: src=memcached dest=/etc/logrotate.d/
+- name: memcached Log stdout in /var/log/
+  shell: sed -i '/^OPTIONS=""/cOPTIONS=" -v >> /var/log/memcached.log 2>&1 "' /etc/sysconfig/memcached
+- name: Restart memcached In Client
+  service: name=memcached enabled=yes state=restarted

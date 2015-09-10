@@ -1,0 +1,22 @@
+- name: Change PHP charset Is UTF-8
+  command: sed -i '/^;default_charset/a\default_charset = "UTF-8"' /etc/php.ini 
+- name: Change PHP timezone for PRC
+  command: sed -i '/^;date.timezone/cdate.timezone = "PRC"' /etc/php.ini
+- name: change PHP error_reporting for 'E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE'
+  command: sed -i '/^error_reporting/cerror_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE' /etc/php.ini 
+- name: Change PHP Run User For deploy
+  command: sed -i 's/apache/deploy/g' /etc/php-fpm.d/www.conf
+- name: Change Php-Fpm  pm  is static
+  command: sed -i '/^pm = dynamic/cpm = static' /etc/php-fpm.d/www.conf
+- name: Print Memory For Client 
+  shell: free -m | grep Mem | awk '{print $2}'
+  register: MEM
+- name: Expr php-fpm For Client
+  shell: expr {{MEM.stdout}} \/ 50 + 1
+  register: PFM
+- name: Change pm.max_children Is Expr php-fpm
+  command: sed -i '/^pm.max_children = 50/cpm.max_children = {{PFM.stdout}}' /etc/php-fpm.d/www.conf
+- name: Modify PHP Session Dir Permission For deploy In Client 
+  command: chown -R deploy.deploy /var/lib/php
+- name: Start php-fpm In Client
+  service: name=php-fpm enabled=yes state=started

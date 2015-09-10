@@ -1,0 +1,7 @@
+- name: CPU
+  shell: grep "processor" /proc/cpuinfo| wc -l
+  register: CPU
+- name: Setting Process Of Mysql
+  shell: sed -i '/^thread_concurrency/cthread_concurrency = {{ CPU.stdout }}' /etc/nginx/nginx.conf
+- name: start mysql Script In Client
+  service: name=mysqld enabled=yes state=started

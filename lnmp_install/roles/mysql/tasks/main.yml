@@ -1,0 +1,4 @@
+- include: delete.yml
+- include: install.yml
+- include: copy.yml
+- include: modify_conf.yml 

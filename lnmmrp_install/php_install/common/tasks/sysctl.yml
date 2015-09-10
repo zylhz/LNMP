@@ -1,0 +1,6 @@
+- name: Copy sysctl.sh to Client
+  copy: src=sysctl.sh dest=/tmp/
+- name: Modify sysctl.sh Permission In Client
+  shell: chmod +x /tmp/sysctl.sh
+- name: Record sysctl.yml In Client
+  shell: bash /tmp/sysctl.sh

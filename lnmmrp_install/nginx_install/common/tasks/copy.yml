@@ -1,0 +1,4 @@
+- name: Copy nginx.repo To Client
+  copy: src=nginx.repo dest=/etc/yum.repos.d/
+- name: Copy epel.repo To Client
+  copy: src=epel.repo dest=/etc/yum.repos.d/

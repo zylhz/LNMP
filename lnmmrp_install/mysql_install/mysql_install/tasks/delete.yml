@@ -1,0 +1,4 @@
+- name: absent mysql-libs In Client
+  yum: name=mysql-libs state=absent
+- name: Install  Crontabs In Client
+  yum: name=crontabs enablerepo=remi state=present

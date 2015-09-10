@@ -1,0 +1,5 @@
+- name: Add User Deploy To Client
+  user: name=deploy shell=/bin/bash
+- name: install nginx
+  yum: name=nginx.x86_64 state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_version|int >=6

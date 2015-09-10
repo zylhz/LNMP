@@ -1,0 +1,9 @@
+- name: LNMMP
+  remote_user: "{{user}}"
+  hosts: "{{host}}"
+  roles:
+    - prepare
+    - mysql
+    - php
+    - nginx
+    - memcached
