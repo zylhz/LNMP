@@ -1,2 +1,3 @@
 # LNMP
 本文主要是介绍使用ansible-playbook来安装LNMP+Memcached+Redis，我们这里选择的为使用yum源的形式进行安装的，通过yum安装的利端是能够很方便快速的解决依赖环境，但其中的弊端为无法选择自己所想安装的版本，因为我们所选的remi仓库安装的程序环境为最新最稳定版本。若使用者对版本有要求请绕行选择使用编译安装。谢谢
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTVo5pJI/XbhCTj5DF++wqb+C3y71zUSKUXK99Xk255BBQLCnjP5b39LaI8Ts2O1X6rfLw6J1hkiJYor/SFFyEqY0Tb8tjoFn6m/0vRhdmuGWMyuT8zz07wlR
